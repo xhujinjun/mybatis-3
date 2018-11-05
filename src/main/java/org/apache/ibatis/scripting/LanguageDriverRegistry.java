@@ -57,6 +57,10 @@ public class LanguageDriverRegistry {
     return defaultDriverClass;
   }
 
+  /**
+   * 放置缺省的语言注册器 XMLLanguageDriver（参考Configuration构造函数）
+   * @param defaultDriverClass
+   */
   public void setDefaultDriverClass(Class<?> defaultDriverClass) {
     register(defaultDriverClass);
     this.defaultDriverClass = defaultDriverClass;

@@ -26,8 +26,13 @@ import org.apache.ibatis.session.Configuration;
  * @author Clinton Begin
  */
 public class StaticSqlSource implements SqlSource {
-
+  /**
+   * sql语句 具有占位符？
+   */
   private String sql;
+  /**
+   * 占位符 参数的信息
+   */
   private List<ParameterMapping> parameterMappings;
   private Configuration configuration;
 

@@ -19,9 +19,17 @@ package org.apache.ibatis.parsing;
  * @author Clinton Begin
  */
 public class GenericTokenParser {
-
+  /**
+   * open令牌
+   */
   private final String openToken;
+  /**
+   * cloase令牌
+   */
   private final String closeToken;
+  /**
+   * 令牌处理器
+   */
   private final TokenHandler handler;
 
   public GenericTokenParser(String openToken, String closeToken, TokenHandler handler) {
@@ -30,6 +38,9 @@ public class GenericTokenParser {
     this.handler = handler;
   }
 
+  /**
+   * 替换令牌
+   */
   public String parse(String text) {
     StringBuilder builder = new StringBuilder();
     if (text != null && text.length() > 0) {

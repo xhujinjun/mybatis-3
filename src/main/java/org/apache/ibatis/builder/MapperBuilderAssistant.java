@@ -54,6 +54,9 @@ import org.apache.ibatis.type.TypeHandler;
  */
 public class MapperBuilderAssistant extends BaseBuilder {
 
+  /**
+   * 当前命名空间
+   */
   private String currentNamespace;
   private String resource;
   private Cache currentCache;
@@ -275,7 +278,7 @@ public class MapperBuilderAssistant extends BaseBuilder {
     if (unresolvedCacheRef) {
       throw new IncompleteElementException("Cache-ref not yet resolved");
     }
-    
+    //生成完整的语句ID(命名空间+sql语句的id属性值)
     id = applyCurrentNamespace(id, false);
     boolean isSelect = sqlCommandType == SqlCommandType.SELECT;
 

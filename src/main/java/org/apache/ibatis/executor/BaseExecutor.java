@@ -134,7 +134,18 @@ public abstract class BaseExecutor implements Executor {
     return query(ms, parameter, rowBounds, resultHandler, key, boundSql);
  }
 
-  @SuppressWarnings("unchecked")
+  /**
+   *
+   * @param ms
+   * @param parameter
+   * @param rowBounds
+   * @param resultHandler
+   * @param key
+   * @param boundSql
+   * @param <E>
+   * @return
+   * @throws SQLException
+   */
   @Override
   public <E> List<E> query(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql) throws SQLException {
     ErrorContext.instance().resource(ms.getResource()).activity("executing a query").object(ms.getId());
